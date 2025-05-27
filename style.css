@@ -1,0 +1,443 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+/* Navigation */
+nav {
+    background: #2C3E50;
+    padding: 1rem;
+}
+
+nav h1 a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+}
+
+nav ul li {
+    margin-left: 2rem;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* Hero Section */
+.hero {
+    background: #3498db;
+    color: #fff;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero h2 {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.hero span {
+    color: #f39c12;
+}
+
+/* About Section */
+.about {
+    padding: 4rem 2rem;
+    background: #ecf0f1;
+    text-align: center;
+}
+
+.about h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.about p {
+    font-size: 18px;
+}
+
+/* Projects Section */
+.projects {
+    padding: 4rem 2rem;
+}
+
+.projects .container {
+    text-align: center;
+}
+
+.projects h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.project-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.project {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    width: 45%;
+    padding: 1rem;
+    text-align: center;
+}
+
+.project img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.project h3 {
+    margin: 1rem 0;
+    font-size: 22px;
+}
+
+.project a {
+    text-decoration: none;
+    color: #3498db;
+}
+
+/* Skills Section */
+.skills {
+    background: #ecf0f1;
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.skills h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.skills ul {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    list-style: none;
+}
+
+.skills li {
+    font-size: 18px;
+    background: #000000;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
+
+/* Contact Section */
+.contact {
+    background: #fff;
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.contact a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: #2C3E50;
+    color: #fff;
+}
+/* ... All previous styles from Step 3 ... */
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    /* Adjust layout for smaller screens */
+    .project-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul li {
+        margin: 1rem 0;
+    }
+
+    /* Adjust hero section text size for smaller screens */
+    .hero h2 {
+        font-size: 36px;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
+
+    /* Adjust project section for smaller screens */
+    .project {
+        width: 100%; /* Full width on smaller screens */
+        margin-bottom: 2rem; /* Add spacing between projects */
+    }
+
+    /* Skills section layout adjustments */
+    .skills ul {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .skills li {
+        font-size: 16px;
+    }
+}
+
+/* Optional: For even smaller screens like mobile */
+@media (max-width: 480px) {
+    .hero h2 {
+        font-size: 28px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+}
+/* Animation for sections */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+section {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-in-out forwards;
+    animation-delay: 0.2s;
+}
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal .close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    color: #333;
+    cursor: pointer;
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+/* General dark mode */
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+nav.dark-mode {
+    background: #1c1c1c;
+}
+
+.skills li.dark-mode {
+    background: #444;
+}
+
+/* Modal dark mode */
+.modal-content.dark-mode {
+    background: #222;
+    color: #e0e0e0;
+}
+/* Resume Section */
+.resume {
+    display: none; /* Initially hidden */
+    padding: 4rem 2rem;
+    text-align: center;
+    background: #fff;
+}
+
+.resume.active {
+    display: block; /* Show when active */
+}
+
+.resume-viewer {
+    width: 100%;
+    height: 500px;
+    border: 1px solid #ddd;
+    margin-top: 1rem;
+}
+/* Profile photo styles */
+.profile-photo {
+    width: 300px; /* Adjust size as needed */
+    height: 300px; /* Make it a perfect square */
+    border-radius: 50%; /* Make it circular */
+    border: 3px solid #f9f9f9; /* Optional: Add a border to match the theme */
+    margin-bottom: 20px; /* Space between photo and text */
+    object-fit: cover; /* Ensure the image scales correctly */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+}
+/* Project Details Page */
+.project-details {
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.project-details h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.project-image {
+    max-width: 80%;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.project-details p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.project-details .btn {
+    text-decoration: none;
+    padding: 0.8rem 2rem;
+    background-color: #3498db;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+.project-details .btn:hover {
+    background-color: #2c3e50;
+}
+/* Project Details Page */
+.project-details {
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.project-details h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.project-image {
+    max-width: 80%;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.project-details p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.project-details .btn {
+    text-decoration: none;
+    padding: 0.8rem 2rem;
+    background-color: #3498db;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+.project-details .btn:hover {
+    background-color: #2c3e50;
+}
+/* Navigation Logo */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; /* Ensures the logo is circular */
+}
+
+.nav-container h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.nav-container h1 a {
+    text-decoration: none;
+    color: inherit;
+}
